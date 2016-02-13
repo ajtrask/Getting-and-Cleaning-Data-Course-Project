@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 test/subject_test.txt
 test/Inertial Signals/body_acc_x_test.txt
+UCI HAR Dataset/activity_labels.txt

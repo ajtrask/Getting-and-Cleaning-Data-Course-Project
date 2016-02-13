@@ -1,21 +1,21 @@
 run_analysis <- function() {
-  ## This function reads in the UCI HAR Dataset from the current directory
-  ## Processes it into a tidy data set
-  ## And writes it to a file
+  ## This function reads in the UCI HAR Dataset from the
+  ## current directory, processes it into a tidy data set,
+  ## and writes it to a file tidy_summary.txt
   
   ## This function requires the dplyr package
   library(dplyr)
   
   ## Read the activity labels from activity_labels.txt
-  activity_labels<-read.table("activity_labels.txt",sep="",header = FALSE)
+  activity_labels<-read.table("UCI HAR Dataset/activity_labels.txt",sep="",header = FALSE)
   
   ## Read the feature labels from features.txt
-  feature_labels<-read.table("features.txt",sep="",header=FALSE)
+  feature_labels<-read.table("UCI HAR Dataset/features.txt",sep="",header=FALSE)
   
   ## Read training data from train subfolder
-  subject_train<-read.table("train/subject_train.txt",sep="",header=FALSE)
-  x_train<-read.table("train/X_train.txt",sep="",header=FALSE)
-  y_train<-read.table("train/y_train.txt",sep="",header=FALSE)
+  subject_train<-read.table("UCI HAR Dataset/train/subject_train.txt",sep="",header=FALSE)
+  x_train<-read.table("UCI HAR Dataset/train/X_train.txt",sep="",header=FALSE)
+  y_train<-read.table("UCI HAR Dataset/train/y_train.txt",sep="",header=FALSE)
   
   ## Rename column names in x_train (Task 4. Appropriately
   ## labels the data set with descriptive variable names)
@@ -38,9 +38,9 @@ run_analysis <- function() {
   train_data<-cbind(subject_train,y_train,x_train)
   
   ## Read test data from test subfolder
-  subject_test<-read.table("test/subject_test.txt",sep="",header=FALSE)
-  x_test<-read.table("test/X_test.txt",sep="",header=FALSE)
-  y_test<-read.table("test/y_test.txt",sep="",header=FALSE)
+  subject_test<-read.table("UCI HAR Dataset/test/subject_test.txt",sep="",header=FALSE)
+  x_test<-read.table("UCI HAR Dataset/test/X_test.txt",sep="",header=FALSE)
+  y_test<-read.table("UCI HAR Dataset/test/y_test.txt",sep="",header=FALSE)
   
   ## Rename column names in x_test (Task 4. Appropriately
   ## labels the data set with descriptive variable names)
